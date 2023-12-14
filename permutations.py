@@ -20,6 +20,6 @@ def get_permutations(string: str):
 
     
 
-print(get_permutations("qwbr"))
+print(get_permutations("123"))
 
 

@@ -1,18 +1,15 @@
 def get_subsets(input: str) -> [str]:
-    def helper(temp: str, index: int, ogString: str):
+    def helper(temp, j):
         output.append(temp)
 
-        for i in range(index, len(ogString)):
-            temp += ogString[i]
-            helper(temp, index + 1, ogString)
+        for i in range(j, len(input)):
+            temp += input[i]
+            helper(temp, i + 1)
             temp = temp[:len(temp) - 1]
 
 
     output = []
-    helper("", 0, input)
+    helper("", 0)
+    return output    
 
-
-    return output
-
-
-print(get_subsets("Tia"))
+print(get_subsets("123"))
