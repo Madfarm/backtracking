@@ -1,4 +1,4 @@
-def get_subsets(input: str) -> [str]:
+def get_subsets_string(input: str) -> [str]:
     def helper(temp, j):
         output.append(temp)
 
@@ -12,4 +12,19 @@ def get_subsets(input: str) -> [str]:
     helper("", 0)
     return output    
 
-print(get_subsets("123"))
+# print(get_subsets_string("123"))
+
+def get_subsets_list(input: [int]):
+    def list_helper(temp, index):
+        output.append(temp[:])
+
+        for i in range(index, len(input)):
+            temp.append(input[i])
+            list_helper(temp, i + 1)
+            temp.pop()
+    
+    output = []
+    list_helper([], 0)
+    return output
+
+# print(get_subsets_list([1,2,3]))
